@@ -8,6 +8,13 @@ export default defineNuxtConfig({
       ]
     }
   },
+  components: [
+    {
+      path: '../components',
+      pathPrefix: false,
+    },
+  ],
+  css: ['../assets/styles/main.css'],
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
   modules: ['@nuxtjs/tailwindcss']

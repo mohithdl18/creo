@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+/* ─── Base ─────────────────────────────────────────────── */
+
+body {
+  background-color: #000;
+}
+
+#work,
+#services,
+#about,
+#why-us {
+  scroll-margin-top: 120px;
+}
+
+
+
+/* ─── Navbar ────────────────────────────────────────────── */
+
+nav {
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@keyframes blink {
+
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  50%,
+  55% {
+    opacity: 0;
+  }
+
+  60%,
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s linear infinite;
+}
+
+/* ─── Custom Cursor ─────────────────────────────────────── */
+
+* {
+  cursor: none;
+}
+
+nav,
+header,
+.fixed,
+.glass {
+  isolation: isolate;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  background: #E2E3E5;
+  box-shadow:
+    0 0 10px white,
+    0 0 20px white,
+    0 0 40px white;
+  mix-blend-mode: difference;
+}
+
+/* ─── Hero ──────────────────────────────────────────────── */
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+.animate-scrollDown {
+  animation: scrollDown 1.8s ease-in-out infinite;
+}
+
+/* ─── Footer ────────────────────────────────────────────── */
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 18s linear infinite;
+}
+
+/* ─── Lenis ─────────────────────────────────────────────── */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}

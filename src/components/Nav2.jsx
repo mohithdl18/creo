@@ -36,7 +36,7 @@ export default function Nav2() {
 
                         {/* Center Logo */}
                         <Image
-                            src="/logo.png"
+                            src="./logo.png"
                             alt="Creo Creators"
                             width={260}
                             height={80}

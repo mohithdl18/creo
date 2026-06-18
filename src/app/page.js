@@ -14,6 +14,7 @@ import WhyUs from "@/components/WhyUs";
 import Clients from "@/components/Clients";
 import HalftoneBird from "@/components/HalftoneBird";
 import Team from "@/components/Team";
+import Founders from "@/components/Founders";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
         <Motto />
         <AboutMain />
         <Team />
+        <Founders />
         <ServicesMain />
         <Method />
         <WhyUs />

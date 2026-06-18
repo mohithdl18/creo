@@ -10,16 +10,8 @@ export default function Hero() {
   const videoRef = useRef(null);
 
   const languages = [
-    "creo",
-    "क्रियो",
-    "ಕ್ರಿಯೋ",
-    "க்ரியோ",
-    "ക്രിയോ",
-    "క్రియో",
-    "ક્રિયો",
-    "ਕ੍ਰਿਓ",
-    "ক্রিও",
-    "ক্ৰিঅ",
+    "creo", "क्रियो", "ಕ್ರಿಯೋ", "க்ரியோ", "ക്രിയോ",
+    "క్రియో", "ક્રિયો", "ਕ੍ਰਿਓ", "ক্রিও", "ক্ৰিঅ",
   ];
 
   const [currentWord, setCurrentWord] = useState(0);
@@ -28,13 +20,11 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setVisible(false);
-
       setTimeout(() => {
         setCurrentWord((prev) => (prev + 1) % languages.length);
         setVisible(true);
       }, 120);
     }, 1000);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -44,16 +34,11 @@ export default function Hero() {
   };
 
   const playAudio = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = false;
-      videoRef.current.volume = 1;
-    }
+    if (videoRef.current) { videoRef.current.muted = false; videoRef.current.volume = 1; }
   };
 
   const stopAudio = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = true;
-    }
+    if (videoRef.current) videoRef.current.muted = true;
   };
 
   return (
@@ -61,22 +46,14 @@ export default function Hero() {
       className="relative w-full h-screen overflow-hidden"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => {
-        setIsHovering(false);
-        stopAudio();
-      }}
+      onMouseLeave={() => { setIsHovering(false); stopAudio(); }}
       onMouseDown={playAudio}
       onMouseUp={stopAudio}
     >
       {/* Background Video */}
       <video
         ref={videoRef}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        disablePictureInPicture
+        autoPlay loop muted playsInline preload="auto" disablePictureInPicture
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src="/Hero.mp4" type="video/mp4" />
@@ -85,15 +62,11 @@ export default function Hero() {
       {/* Vignette */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50 z-10" />
 
-      {/* Cursor Tooltip */}
+      {/* Cursor Tooltip — desktop only */}
       {isHovering && (
         <div
-          className="fixed z-[200] pointer-events-none"
-          style={{
-            left: `${cursorX}px`,
-            top: `${cursorY}px`,
-            transform: "translate(-50%, -50%)",
-          }}
+          className="fixed z-[200] pointer-events-none hidden md:block"
+          style={{ left: `${cursorX}px`, top: `${cursorY}px`, transform: "translate(-50%, -50%)" }}
         >
           <div className="bg-[#E2E3E5] text-black font-bold text-xs px-4 py-2 rounded-full whitespace-nowrap tracking-wide">
             Hold for Audio
@@ -109,14 +82,20 @@ export default function Hero() {
       </div>
 
       {/* Multi-language CREO */}
-      <div className="absolute bottom-10 left-10 z-20 leading-none">
+      <div className="absolute bottom-10 left-5 md:left-10 z-20 leading-none">
         <h1
-          className={`text-[#E2E3E5] text-[220px] md:text-[180px] font-bold leading-none transition-opacity duration-75 ${
-            visible ? "opacity-100" : "opacity-0"
-          }`}
+          className={`text-[#E2E3E5] font-bold leading-none transition-opacity duration-75 ${visible ? "opacity-100" : "opacity-0"}
+            text-[22vw] sm:text-[180px] md:text-[200px] lg:text-[220px]`}
         >
           {languages[currentWord]}
         </h1>
+      </div>
+
+      {/* Mobile audio hint */}
+      <div className="absolute bottom-24 right-5 z-20 md:hidden">
+        <div className="bg-[#E2E3E5]/80 text-black font-bold text-[10px] px-3 py-1.5 rounded-full whitespace-nowrap tracking-wide">
+          Tap & hold for audio
+        </div>
       </div>
     </section>
   );

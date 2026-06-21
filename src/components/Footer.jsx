@@ -89,7 +89,7 @@ export default function Footer() {
             href="https://wa.link/d6cus6"
             target="_blank"
             rel="noopener noreferrer"
-            className="group block cursor-none"
+            className="hide-custom-cursor group block cursor-none"
             onMouseEnter={() => setShowCursor(true)}
             onMouseLeave={() => setShowCursor(false)}
             onMouseMove={(e) =>

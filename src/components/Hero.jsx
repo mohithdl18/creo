@@ -75,7 +75,7 @@ export default function Hero() {
       )}
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
+      <div className="absolute bottom-8 right-5 -translate-x-1/2 z-20">
         <div className="w-6 h-10 border-2 border-[#E2E3E5]/70 rounded-full flex justify-center">
           <div className="w-1 h-2 bg-[#E2E3E5] rounded-full mt-2 animate-scrollDown" />
         </div>

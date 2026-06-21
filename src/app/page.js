@@ -4,22 +4,19 @@ import Hero from "@/components/Hero";
 import MoreWork from "@/components/MoreWork";
 import Motto from "@/components/Motto";
 import Navbar from "@/components/Navbar";
-import Nav from "@/components/Nav";
-import Nav2 from "@/components/Nav2";
 import ServicesMain from "@/components/ServicesMain";
 import Method from "@/components/Method";
 import Tagline from "@/components/Tagline";
 import WorkShowcase from "@/components/WorkShowcase";
 import WhyUs from "@/components/WhyUs";
 import Clients from "@/components/Clients";
-import HalftoneBird from "@/components/HalftoneBird";
 import Team from "@/components/Team";
 import Founders from "@/components/Founders";
 
 export default function Home() {
   return (
     <>
-      <Nav2 />
+      <Navbar />
       {/* <Nav /> */}
       {/* <Navbar /> */}
       <main>

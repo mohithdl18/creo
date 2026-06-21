@@ -123,7 +123,7 @@ export default function ServicesMain() {
                         src={service.image}
                         alt={service.title}
                         fill
-                        priority
+                        sizes="280px"
                         className={`absolute inset-0 object-cover transition-opacity duration-300 ${isHovered ? "opacity-100" : "opacity-0"
                           }`}
                       />

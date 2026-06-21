@@ -11,11 +11,9 @@ const clients = [
     "Rapido",
     "Falcon Group",
     "Devadhare",
-    "Urban Company",
-    "Myntra",
-    "Blinkit",
-    "Lenskart",
-    "Sugar Cosmetics",
+    "Porcupine Castle",
+    "Skyro",
+    "Miraya",
 ];
 
 export default function Clients() {

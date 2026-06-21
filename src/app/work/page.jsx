@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Montserrat } from "next/font/google";
+import Link from "next/link";
+import { IoArrowBack } from "react-icons/io5";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -13,39 +15,38 @@ const caseStudies = [
   {
     id: "01",
     image: "/work1.png",
-    category: "Lifestyle & Fashion",
-    title: "Turning a Saree Brand Into a Social Movement",
+    category: "Hospitality & Resorts",
+    title: "Redefining a Resort's Digital Identity",
     problem:
-      "A premium ethnic fashion label had stunning products but zero digital reach. The objective was to build a recognizable brand identity, grow an engaged audience, and turn social media into a powerful sales channel.",
+      "A premium jungle resort had zero social presence and was entirely OTA-dependent for bookings. CREO took over their full digital identity — from content production to paid performance — and rebuilt it from the ground up over 24 months.",
 
     services: [
       "Brand Identity",
-      "Social Media",
-      "Product Photography",
       "Meta Campaigns",
-      "Content Strategy",
+      "Reel Production",
+      "Website",
     ],
 
-    result: "10M+",
-    resultDesc: "People reached across platforms · 2-year campaign",
+    result: "20M+",
+    resultDesc: "People reached organically & via paid · 2-year campaign",
 
     stats: [
       {
-        value: "100%",
+        value: "120%",
         label: "Monthly Follower Growth",
       },
       {
-        value: "15%",
-        label: "Growth in Sales",
+        value: "40%",
+        label: "Growth in Bookings",
       },
       {
-        value: "10M+",
+        value: "20M+",
         label: "Total Reach",
       },
     ],
 
     quote:
-      "CREO gave our industrial brand a voice that speaks to engineers and decision-makers alike. The results in reach and sales have been beyond what we expected.",
+      "CREO transformed how the world sees our property. What we built with them in two years would have taken a decade on our own.",
 
     author: "Resort Director, Hospitality Client",
     reverse: false,
@@ -135,23 +136,47 @@ const caseStudies = [
 ];
 
 export default function Page() {
+
   return (
-    <main className="bg-black min-h-screen pt-36 pb-24">
+    <main className="bg-black min-h-screen pt-16 pb-24">
+
       <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-20">
+        {/* Back Button */}
+        <Link
+          href="/"
+          className="hide-custom-cursor w-14 h-14 rounded-full border border-white/15 flex items-center justify-center text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300 group"
+        >
+          <IoArrowBack
+            size={20}
+            className="group-hover: transition-transform duration-300"
+          />
+        </Link>
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between md:items-end mb-20 gap-8">
+        <div className="flex flex-col md:flex-row justify-between md:items-start mb-20 gap-8 pt-16">
           <h1
-            className={`${montserrat.className} text-white font-semibold leading-[0.9] tracking-[0.02em] text-[clamp(3rem,6vw,6rem)]`}
+            className={`${montserrat.className} text-[#E2E3E5] font-semibold leading-[0.9] tracking-[0.02em] text-[clamp(3rem,6vw,6rem)]`}
           >
             CASE
             <br />
             STUDIES
           </h1>
 
-          <div className="text-right uppercase tracking-[0.15em] text-[0.7rem] text-neutral-500 leading-7">
-            Selected Work
-            <br />
-            2026 Edition
+          <div className="flex flex-col items-end">
+            <Link href="/" className="group">
+              <Image
+                src="/logo.png"
+                alt="CREO"
+                width={180}
+                height={180}
+                className="mb-4 object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+            </Link>
+
+            <div className="text-right pt-10 uppercase tracking-[0.15em] text-[0.7rem] text-neutral-500 leading-7">
+              Selected Work
+              <br />
+              2026 Edition
+            </div>
           </div>
         </div>
 
@@ -220,24 +245,22 @@ export default function Page() {
                     {item.resultDesc}
                   </p>
 
-                  {item.stats && (
-                    <div className="grid grid-cols-3 gap-px bg-white/10 mb-8">
-                      {item.stats.map((stat) => (
-                        <div
-                          key={stat.label}
-                          className="bg-[#111111] p-4 text-center"
-                        >
-                          <div className="text-2xl md:text-3xl font-semibold text-white">
-                            {stat.value}
-                          </div>
-
-                          <div className="mt-2 text-[10px] uppercase tracking-[0.15em] text-neutral-500">
-                            {stat.label}
-                          </div>
+                  <div className="grid grid-cols-3 gap-px bg-white/10 mb-8">
+                    {item.stats.map((stat) => (
+                      <div
+                        key={stat.label}
+                        className="bg-[#111111] p-4 text-center"
+                      >
+                        <div className="text-2xl md:text-3xl font-semibold text-white">
+                          {stat.value}
                         </div>
-                      ))}
-                    </div>
-                  )}
+
+                        <div className="mt-2 text-[10px] uppercase tracking-[0.15em] text-neutral-500">
+                          {stat.label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
 
                   <blockquote className="pl-5 border-l-2 border-white/40 italic text-neutral-300 leading-7">
                     "{item.quote}"

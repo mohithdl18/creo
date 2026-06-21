@@ -18,11 +18,11 @@ export default function Tagline() {
         <p className="text-right text-[7vw] sm:text-[48px] md:text-[60px] lg:text-[80px]">
           We don't make content.
         </p>
-        <p className="text-left text-[4.5vw] sm:text-[32px] md:text-[40px] lg:text-[51px]">
+        <p className="text-left text-[4.5vw] sm:text-[32px] md:text-[40px] lg:text-[46px]">
           We build brands that people actually want to buy from.
         </p>
         <p className="text-left">
-          <span className="text-[#FCB724] text-[5vw] sm:text-[36px] md:text-[50px] lg:text-[65px] font-bold">
+          <span className="text-[#FCB724] text-[5vw] sm:text-[36px] md:text-[50px] lg:text-[58px] font-bold">
             Strategy, production, and performance —
           </span>
         </p>

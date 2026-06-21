@@ -56,7 +56,7 @@ export default function Hero() {
         autoPlay loop muted playsInline preload="auto" disablePictureInPicture
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/Hero.mp4" type="video/mp4" />
+        <source src="/hero.mp4" type="video/mp4" />
       </video>
 
       {/* Vignette */}

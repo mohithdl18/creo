@@ -1,0 +1,13 @@
+.mobile-root {
+  min-height: 100vh;
+  background: black;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}

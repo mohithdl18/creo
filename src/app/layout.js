@@ -38,6 +38,11 @@ export const metadata = {
       name: "Mohith D L",
     },
   ],
+
+  alternates: {
+    canonical: "/",
+  },
+
   icons: {
     icon: "/icon.png",
   },
